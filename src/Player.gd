@@ -11,6 +11,7 @@ var velocity = Vector3()
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+	_init_buttons()
 	set_fixed_process(true)
 	pass
 
@@ -44,5 +45,24 @@ func _walk(delta):
 		if (motion.length()<0.001):
 			break
 			attempts-=1
+
+func _init_buttons():
+	var vp_size = get_viewport().get_visible_rect().size
+	var ui_scale = vp_size.x / 500
+	get_node("btn_forward").set_action("forward")
+	get_node("btn_backward").set_action("backward")
+	get_node("btn_right").set_action("right")
+	get_node("btn_left").set_action("left")
+	
+	get_node("btn_forward").set_scale(Vector2(ui_scale,ui_scale))
+	get_node("btn_backward").set_scale(Vector2(ui_scale,ui_scale))
+	get_node("btn_left").set_scale(Vector2(ui_scale,ui_scale))
+	get_node("btn_right").set_scale(Vector2(ui_scale ,ui_scale))
+	
+	get_node("btn_forward").set_pos(Vector2(0, vp_size.y - 64 * ui_scale * 2))
+	get_node("btn_backward").set_pos(Vector2(64 * ui_scale ,vp_size.y))
+	get_node("btn_right").set_pos(Vector2(vp_size.x,  vp_size.y - 64 * ui_scale))
+	get_node("btn_left").set_pos(Vector2(vp_size.x - 64 * ui_scale * 2,  vp_size.y))
+
 # check that the resulting velocity is not opposite to
 # the original velocity, which would mean moving backward.

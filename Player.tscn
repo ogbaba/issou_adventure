@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://src/Player.gd" type="Script" id=1]
 [ext_resource path="res://textures/PlayerFront.png" type="Texture" id=2]
+[ext_resource path="res://textures/BoutonFleche.png" type="Texture" id=3]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -83,5 +84,65 @@ visible_layers = 1048575
 environment = null
 h_offset = 0.0
 v_offset = 0.0
+
+[node name="btn_forward" type="TouchScreenButton" parent="."]
+
+transform/pos = Vector2( 38.0522, 377.676 )
+transform/rot = 0.187627
+transform/scale = Vector2( 1.48762, 1.48762 )
+normal = ExtResource( 3 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+
+[node name="btn_backward" type="TouchScreenButton" parent="."]
+
+transform/pos = Vector2( 153.111, 631.946 )
+transform/rot = 180.0
+transform/scale = Vector2( 1.48762, 1.48762 )
+normal = ExtResource( 3 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+
+[node name="btn_left" type="TouchScreenButton" parent="."]
+
+transform/pos = Vector2( 792.38, 545.809 )
+transform/rot = 90.0
+transform/scale = Vector2( 1.48762, 1.48762 )
+normal = ExtResource( 3 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+
+[node name="btn_right" type="TouchScreenButton" parent="."]
+
+transform/pos = Vector2( 992.323, 450.382 )
+transform/rot = 270.0
+transform/scale = Vector2( 1.48762, 1.48762 )
+normal = ExtResource( 3 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
 
 
